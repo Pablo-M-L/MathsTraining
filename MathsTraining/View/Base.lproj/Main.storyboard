@@ -26,7 +26,7 @@
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eoi-yH-8Pc">
-                                <rect key="frame" x="20" y="96" width="374" height="384"/>
+                                <rect key="frame" x="20" y="96" width="374" height="344"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="8R8-9B-thZ" style="IBUITableViewCellStyleDefault" id="97Y-dB-ygh">
@@ -52,23 +52,33 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="YfI-ru-zcr"/>
                                 </connections>
                             </tableView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NCL-Vp-FLS">
+                                <rect key="frame" x="20" y="455" width="374" height="13"/>
+                                <color key="progressTintColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="trackTintColor" red="0.9818084198" green="1" blue="0.022427217690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="eoi-yH-8Pc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="48k-qQ-4yc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="14n-JT-EgZ" secondAttribute="bottom" id="5q1-Va-uqN"/>
-                            <constraint firstItem="14n-JT-EgZ" firstAttribute="top" secondItem="eoi-yH-8Pc" secondAttribute="bottom" constant="8" id="DxR-6e-p4b"/>
+                            <constraint firstItem="NCL-Vp-FLS" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="7ww-FH-a6T"/>
+                            <constraint firstItem="14n-JT-EgZ" firstAttribute="top" secondItem="eoi-yH-8Pc" secondAttribute="bottom" constant="48" id="DxR-6e-p4b"/>
                             <constraint firstItem="eoi-yH-8Pc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="Mvm-ni-09M"/>
+                            <constraint firstItem="14n-JT-EgZ" firstAttribute="top" secondItem="NCL-Vp-FLS" secondAttribute="bottom" constant="20" id="Q1k-1E-hc9"/>
+                            <constraint firstItem="NCL-Vp-FLS" firstAttribute="top" secondItem="eoi-yH-8Pc" secondAttribute="bottom" constant="15" id="RW5-Of-mOl"/>
                             <constraint firstItem="14n-JT-EgZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XQ4-xB-GKo"/>
                             <constraint firstItem="14n-JT-EgZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Zqt-wV-bWl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eoi-yH-8Pc" secondAttribute="trailing" constant="20" id="iT5-zC-H9O"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="14n-JT-EgZ" secondAttribute="trailing" constant="20" id="opM-zp-xOs"/>
+                            <constraint firstItem="NCL-Vp-FLS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="tIj-Vl-ujG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="hdL-NZ-GL5"/>
                     <connections>
                         <outlet property="drawingView" destination="14n-JT-EgZ" id="uCn-TA-9xa"/>
+                        <outlet property="progressView" destination="NCL-Vp-FLS" id="mq5-2h-a84"/>
                         <outlet property="tableView" destination="eoi-yH-8Pc" id="5aE-3s-Yw6"/>
                     </connections>
                 </viewController>

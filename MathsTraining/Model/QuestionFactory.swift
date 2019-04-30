@@ -16,7 +16,17 @@ class QuestionFactory{
     // pero la variable sigue siendo publica.
     private(set) var score = 0
     
+    private(set) var pointsPerQuestion = 100
+    //public private(set) var maxQuestions = 5
+    
+    
     init(){
+        addNewQuestion()
+    }
+    
+    func restartData(){
+        self.score = 0
+        self.questions.removeAll()
         addNewQuestion()
     }
     
@@ -31,6 +41,16 @@ class QuestionFactory{
             return nil
         }
         return self.questions[position]
+    }
+    
+    func updateQuestion(at index: Int, with answer: Int){
+        questions[index].userAnswer = answer
+    }
+    
+    func validateQuestion(at index: Int){
+        if self.questions[index].userAnswer == self.questions[index].answer{
+            self.score += pointsPerQuestion
+        }
     }
     
     func numberOfQuestions()->Int{
@@ -58,7 +78,7 @@ class QuestionFactory{
             }else{
                 //generamos operacion resta
                 let result = firstNumber - secondNumber
-                if result < 10 {
+                if result > 0 {
                     question = "\(firstNumber) - \(secondNumber)"
                     correctAnswer = result
                     break
